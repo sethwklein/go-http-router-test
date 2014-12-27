@@ -41,12 +41,18 @@ different routers.
 
 # The Tests
 
+## Cast of characters
+
+* [Standard Library](http://golang.org/pkg/net/http/)
+* [Goji](https://github.com/zenazn/goji)
+
 ## Method Not Supported
 
 ```
 GET / HTTP/1.1
 
 HTTP/1.1 404 Not Found
+
 ```
 
 [Wat][w]?
@@ -58,7 +64,12 @@ example.
 
 Implemented for:
 
-* http.ServeMux
+* Standard Library (passed)
+* Goji (failed)
+
+Installing handlers for all known but unsupported HTTP verbs doesn't count.
+It isn't future proof, and it means installing them all (probably by writing
+a function to do it en masse), and that's just silly.
 
 ## HEAD
 
