@@ -6,11 +6,13 @@ solving common problems with common HTTP routers (multiplexers, muxers, etc.)
 If you see anything that needs fixing feel free to create an issue or
 pull request. I'm especially looking to fix:
 
-* Anything that isn't idiomatic for the router in question, preferably with
-    references to what is idiomatic.
-* Anything that doesn't work well in practice, preferably with what scars you
-    got when you tried.
-* Anything that's wrong (no kidding!), preferably with why it's wrong.
+* Anything that is wrong or not idiomatic for the router in question. I don't
+    use most of these (I only need one!), and I don't want to portray any
+    unfairly, so if you see something, please please create an issue with
+    a link to the documentation I missed or whatever.
+* Any tests that are testing the wrong thing. I'm testing for the sanest
+    behavior I know, but if you have wisdom to share, feel free to create
+    an issue.
 
 I'm expecting this to be a rationale heavy project. That's kind of its purpose.
 
@@ -27,11 +29,10 @@ there.
 [b]: https://github.com/julienschmidt/go-http-routing-benchmark
 
 The concerns I did have led me to to try something besides the standard
-library's ServeMux, and at first I was quite excited. But as I put in more
-time with an alternative, I began to discover problems with functionality and
-to notice exactly how much difference from the standard library I was really
-getting. As [Blake Mizerany so eloquently points out][f], sometimes it's not
-much.
+library, and at first I was quite excited. But as I put in more time with
+an alternative, I began to discover problems with functionality and to notice
+exactly how much difference from the standard library I was really getting.
+As [Blake Mizerany so eloquently points out][f], sometimes it's not much.
 
 [f]: https://www.youtube.com/watch?v=yi5A3cK1LNA
 
@@ -39,12 +40,12 @@ So I'm starting this project to work out precisely what functionality I expect
 from an HTTP router and to compare code required to achieve it with the
 different routers.
 
-# The Tests
-
-## Cast of characters
+# Cast of characters
 
 * [Standard Library](http://golang.org/pkg/net/http/)
 * [Goji](https://github.com/zenazn/goji)
+
+# The Tests
 
 ## Method Not Allowed
 
