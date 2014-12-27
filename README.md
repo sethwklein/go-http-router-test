@@ -46,7 +46,7 @@ different routers.
 * [Standard Library](http://golang.org/pkg/net/http/)
 * [Goji](https://github.com/zenazn/goji)
 
-## Method Not Supported
+## Method Not Allowed
 
 ```
 GET / HTTP/1.1
