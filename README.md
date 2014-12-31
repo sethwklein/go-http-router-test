@@ -44,6 +44,7 @@ different routers.
 
 * [Standard Library](http://golang.org/pkg/net/http/)
 * [Goji](https://github.com/zenazn/goji)
+* [Gorilla Mux](http://www.gorillatoolkit.org/pkg/mux)
 
 # The Tests
 
@@ -67,6 +68,7 @@ Implemented for:
 
 * Standard Library (passed)
 * Goji (failed)
+* Gorilla Mux (can pass, but only with non-idiomatic code)
 
 Installing handlers for all known but unsupported HTTP verbs doesn't count.
 It isn't future proof, and it means installing them all (probably by writing

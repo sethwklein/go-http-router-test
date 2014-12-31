@@ -7,7 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/zenazn/goji/web"
+	gorilla "code.google.com/p/gorilla/mux"
+	goji "github.com/zenazn/goji/web"
 	"sethwklein.net/go/errutil"
 )
 
@@ -54,8 +55,8 @@ func TestMethodNotAllowedStandardLibrary(t *testing.T) {
 }
 
 func MethodNotAllowedGoji() (err error) {
-	mux := web.New()
-	mux.Post("/", func(_ web.C, w http.ResponseWriter, _ *http.Request) {
+	mux := goji.New()
+	mux.Post("/", func(_ goji.C, w http.ResponseWriter, _ *http.Request) {
 		w.Write([]byte("test body"))
 	})
 
@@ -67,6 +68,25 @@ func MethodNotAllowedGoji() (err error) {
 
 func TestMethodNotAllowedGoji(t *testing.T) {
 	err := MethodNotAllowedGoji()
+	if err != nil {
+		t.Error(err)
+	}
+}
+
+func MethodNotAllowedGorilla() (err error) {
+	mux := gorilla.NewRouter()
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("test body"))
+	}).Methods("POST")
+
+	ts := httptest.NewServer(mux)
+	defer ts.Close() // no return value
+
+	return Uses405(ts.URL)
+}
+
+func TestMethodNotAllowedGorilla(t *testing.T) {
+	err := MethodNotAllowedGorilla()
 	if err != nil {
 		t.Error(err)
 	}
