@@ -1,7 +1,8 @@
 # Go HTTP Router Test
 
 Go HTTP Router Test tests router behavior and documents idiomatic code for
-solving common problems with common HTTP routers (multiplexers, muxers, etc.)
+solving common problems with common HTTP routers (multiplexers, muxers,
+whatchamacallits.)
 
 If you see anything that needs fixing feel free to create an issue or
 pull request. I'm especially looking to fix:
@@ -13,6 +14,8 @@ pull request. I'm especially looking to fix:
 * Any tests that are testing the wrong thing. I'm testing for the sanest
     behavior I know, but if you have wisdom to share, feel free to create
     an issue.
+* Missing routers or tests. Perhaps it doesn't need saying, but just in case,
+    pull requests to add those are cool too.
 
 I'm expecting this to be a rationale heavy project. That's kind of its purpose.
 
