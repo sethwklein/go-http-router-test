@@ -17,8 +17,6 @@ pull request. I'm especially looking to fix:
 * Missing routers or tests. Perhaps it doesn't need saying, but just in case,
     pull requests to add those are cool too.
 
-I'm expecting this to be a rationale heavy project. That's kind of its purpose.
-
 ## The Story
 
 For some reason the standard library's http package and I have never got
